@@ -85,9 +85,10 @@ module CarrierWave
         end
       end
 
-      def asset_host_public
-        @asset_host_public || false
+      def asset_host_public_with_default
+        asset_host_public_without_default || false
       end
+      alias_method_chain :asset_host_public, :default
     end
   end
 end
